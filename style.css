@@ -1,0 +1,748 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@1,700&display=swap');
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 700;
+    font-style: italic;
+    opacity: 0.15; /* Subtle background number */
+    line-height: 1;
+    position: relative;
+    z-index: 0;
+}
+
+/* Layout Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    height: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+}
+
+/* Vertical Label */
+.vertical-label-container {
+    position: absolute;
+    left: 40px; /* Adjust based on design */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.vertical-label-container.right {
+    left: auto;
+    right: 40px;
+}
+
+.vertical-line {
+    width: 1px;
+    height: 60px;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.menu-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Section 01: Hero */
+#hero {
+    background-color: #f3f3f3;
+    height: 100vh;
+    min-height: 800px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-text {
+    flex: 1;
+    padding-left: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-image {
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+.hero-image img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+    filter: grayscale(100%);
+    opacity: 0.9;
+}
+
+.hero-number {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    color: #ccc;
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    opacity: 0.3;
+}
+
+.hero-number::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 100px;
+    background: #000;
+    opacity: 0.2;
+    margin: 20px auto 0;
+}
+
+.intro-text h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.intro-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background: rgba(0,0,0,0.1);
+}
+
+.intro-text p {
+    font-size: 0.9rem;
+    color: #666;
+    max-width: 400px;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+/* Sidebar marks (right side) */
+.ruler-marks {
+    position: absolute;
+    right: 40px;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mark {
+    width: 10px;
+    height: 1px;
+    background: #ccc;
+}
+.mark.long { width: 20px; background: #999; }
+
+
+/* Section 02: Portfolio */
+#portfolio {
+    background-color: #4b4b4b;
+    color: #fff;
+    min-height: 800px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.portfolio-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.portfolio-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.portfolio-image img {
+    max-width: 400px;
+    opacity: 0.9;
+}
+
+.portfolio-text {
+    flex: 1;
+    padding-left: 4rem;
+}
+
+.portfolio-text h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.portfolio-text h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    background: rgba(255,255,255,0.2);
+}
+
+.portfolio-text .subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.portfolio-text p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    max-width: 350px;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.link-arrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Section Number 02 */
+.portfolio-number-container {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: rgba(255,255,255,0.1);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.portfolio-line {
+    width: 1px;
+    height: 80px;
+    background: rgba(255,255,255,0.1);
+    margin-bottom: 20px;
+}
+
+.portfolio-label {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+}
+
+
+/* Section 03: Achievements */
+#achievements {
+    background-color: #f3f3f3;
+    padding: 100px 0;
+    position: relative;
+}
+
+.achievements-content {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 100px;
+}
+
+.achievements-list {
+    flex: 1;
+    padding-right: 4rem;
+}
+
+.achievements-list h3 {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.achievements-list h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    background: rgba(0,0,0,0.1);
+}
+
+.award-item {
+    margin-bottom: 2rem;
+}
+
+.award-year {
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.award-desc {
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.stats-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 20px 0;
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 30px; /* Space for label below */
+}
+
+.stat-icon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* Increased height to encompass number area */
+    z-index: 1;
+    opacity: 0.1; /* Very low opacity for background effect */
+    pointer-events: none;
+}
+
+.stat-icon i {
+    font-size: 5rem; /* Much larger than the number */
+    color: #999;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #333;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+/* Number 03 positioning similar to 02 but light */
+.achieve-number-container {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.achieve-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: rgba(0,0,0,0.1);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+.achieve-line {
+    width: 1px;
+    height: 80px;
+    background: rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+.achieve-label {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: rgba(0,0,0,0.3);
+    text-transform: uppercase;
+}
+
+
+/* Section 04: Clients */
+#clients {
+    background-color: #2b2b2b;
+    position: relative;
+    height: 600px;
+    color: #fff;
+    overflow: hidden;
+}
+
+.clients-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/clients.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.clients-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.clients-title {
+    margin-bottom: 4rem;
+}
+
+.clients-title h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.clients-title span {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    text-transform: uppercase;
+}
+
+.testimonial {
+    max-width: 600px;
+    margin-bottom: 4rem;
+}
+
+.testimonial p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.author {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.role {
+    font-size: 0.7rem;
+    opacity: 0.6;
+    letter-spacing: 1px;
+}
+
+.client-logos {
+    display: flex;
+    gap: 4rem;
+    opacity: 0.7;
+    margin-top: 2rem;
+}
+
+.logo-item {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px 20px;
+    font-size: 0.8rem;
+}
+
+/* Number 04 */
+.clients-number-container {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+.clients-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: rgba(255,255,255,0.1);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+.clients-line { width: 1px; height: 80px; background: rgba(255,255,255,0.1); margin-bottom: 20px; }
+.clients-label { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 0.7rem; letter-spacing: 2px; color: rgba(255,255,255,0.3); text-transform: uppercase; }
+
+
+/* Section 05: Blog */
+#blog {
+    background-color: #f3f3f3;
+    padding: 100px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-content {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    align-items: center;
+    padding-left: 100px;
+}
+
+.blog-image {
+    width: 300px;
+    height: 200px;
+    margin-right: 4rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.blog-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.blog-text h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    background: rgba(0,0,0,0.1);
+}
+
+.blog-meta {
+    font-size: 0.7rem;
+    color: #999;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.blog-text p {
+    font-size: 0.9rem;
+    color: #666;
+    max-width: 400px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Number 05 */
+.blog-number-container {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.blog-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: rgba(0,0,0,0.1);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+.blog-line { width: 1px; height: 80px; background: rgba(0,0,0,0.1); margin-bottom: 20px; }
+.blog-label { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 0.7rem; letter-spacing: 2px; color: rgba(0,0,0,0.3); text-transform: uppercase; }
+
+/* Footer */
+footer {
+    background-color: #f3f3f3;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+    color: #999;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.socials span {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-content, .portfolio-container, .achievements-content, .blog-content {
+        flex-direction: column;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .hero-text {
+        padding: 4rem 2rem;
+        align-items: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 400px;
+    }
+
+    .portfolio-text {
+        padding: 2rem;
+    }
+
+    .achievements-list {
+        padding: 0 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .blog-image {
+        margin: 0 0 2rem 0;
+    }
+
+    .vertical-label-container, .hero-number, .portfolio-number-container, .achieve-number-container, .clients-number-container, .blog-number-container {
+        display: none;
+    }
+}
