@@ -167,6 +167,7 @@ header {
     mix-blend-mode: multiply;
     filter: grayscale(100%);
     opacity: 0.9;
+    transform: scaleX(-1);
 }
 
 .hero-number {
