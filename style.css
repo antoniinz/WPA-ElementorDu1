@@ -167,6 +167,7 @@ header {
     mix-blend-mode: multiply;
     filter: grayscale(100%);
     opacity: 0.9;
+    transform: scaleX(-1);
 }
 
 .hero-number {
@@ -205,8 +206,8 @@ header {
     bottom: 0;
     left: 0;
     width: 40px;
-    height: 1px;
-    background: rgba(0,0,0,0.1);
+    height: 5px;
+    background: rgba(0,0,0,1);
 }
 
 .intro-text p {
@@ -264,6 +265,7 @@ header {
 .portfolio-image img {
     max-width: 400px;
     opacity: 0.9;
+    filter: grayscale(100%) brightness(2.2);
 }
 
 .portfolio-text {
@@ -283,9 +285,9 @@ header {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 30px;
-    height: 1px;
-    background: rgba(255,255,255,0.2);
+    width: 40px;
+    height: 5px;
+    background: rgba(255,255,255,2);
 }
 
 .portfolio-text .subtitle {
@@ -382,9 +384,9 @@ header {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 30px;
-    height: 1px;
-    background: rgba(0,0,0,0.1);
+    width: 40px;
+    height: 5px;
+    background: rgba(0,0,0,1);
 }
 
 .award-item {
@@ -651,9 +653,9 @@ header {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 30px;
-    height: 1px;
-    background: rgba(0,0,0,0.1);
+    width: 40px;
+    height: 5px;
+    background: rgba(0,0,0,1);
 }
 
 .blog-meta {
